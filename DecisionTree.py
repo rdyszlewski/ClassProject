@@ -18,9 +18,7 @@ class DecisionTree(object):
 
         # uczenie sieci neuronowej
         tree = DecisionTreeClassifier(criterion=criterion, max_depth=max_depth, random_state=random_state)
-        print("Score")
-        print(tree.fit(X_train, y_train).score(X_test, y_test))
-        print(metrics.classification_report())
+
         # TODO narysować wykres
 
         y_pred = tree.predict(X_test)

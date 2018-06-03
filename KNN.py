@@ -1,7 +1,6 @@
 from sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
 
-
 class KNN(object):
 
     def __init__(self,X_train, y_train, X_test, y_test):
@@ -18,7 +17,8 @@ class KNN(object):
 
         knn =KNeighborsClassifier(n_neighbors=neighbors, p=p, metric=metric)
         knn.fit(X_train, y_train)
-        #TODO narysować wykres
 
         y_pred = knn.predict(X_test)
         print(accuracy_score(y_test, y_pred))
+
+        return knn
