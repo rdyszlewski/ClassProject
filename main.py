@@ -7,6 +7,7 @@ from Classifiers import Classifiers
 from Teacher import Teacher
 import PlotDecisionRegions as pdr
 from SBS import SBS
+import RandomForest
 
 #TODO przekazać jakoś
 # target_column = 10
@@ -26,13 +27,14 @@ dataset.set_use_standarized(True)
 classifiers = Classifiers()
 teacher = Teacher(dataset)
 
-perceptron = classifiers.perceptron(10, 0.01, 1)
-svm = classifiers.svm()
-sbs = SBS(svm, k_features=1)
-sbs.fit(dataset.get_X_combined(), dataset.get_y_combined())
-print(sbs.get_best_subset())
-sbs.show_plot()
+# perceptron = classifiers.perceptron(10, 0.01, 1)
+# svm = classifiers.svm()
+# sbs = SBS(svm, k_features=1)
+# sbs.fit(dataset.get_X_combined(), dataset.get_y_combined())
+# print(sbs.get_best_subset())
+# sbs.show_plot()
 
+RandomForest.start(dataset.get_df(), dataset.get_X_combined(), dataset.get_y_combined())
 
 
 

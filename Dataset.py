@@ -92,3 +92,5 @@ class Dataset:
     def get_y_combined(self):
         return np.hstack((self._y_train, self._y_test))
 
+    def get_df(self):
+        return self._df
